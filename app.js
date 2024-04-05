@@ -16,9 +16,9 @@ app.post('/test', (req, res) => {
     console.table({
         URL: req.originalUrl,
         rawBody: req.raw,
-        parsedBody: JSON.stringify(req.body),
+        parsedBodyStringified: JSON.stringify(req.body),
         rawQuery: queryString,
-        parsedQuery: JSON.stringify(req.query),
+        parsedQueryStringified: JSON.stringify(req.query),
     });
     res.end();
 });
@@ -32,5 +32,5 @@ app.listen(PORT, () => console.log(`Test server listening on port ${PORT}.`));
  * The documentation indicates the expected behaviour for both to be
  * as per the current query string behaviour.
  */
-const obj = { foo: ['bar', 'baz',' boo'] };
+const obj = { foo: ['bar', 'baz'] };
 superagent.post('http://localhost:3000/test').type('form').send(obj).query(obj).end();
