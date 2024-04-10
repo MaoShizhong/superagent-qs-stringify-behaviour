@@ -1,5 +1,7 @@
 # Superagent object serialisation inconsistency
 
+For the following superagent issue: https://github.com/ladjs/superagent/issues/1798
+
 ## Steps to reproduce
 
 1. Fork and clone this repo.
